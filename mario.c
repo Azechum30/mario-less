@@ -1,6 +1,4 @@
 #include <stdio.h>
-#include <ctype.h>
-
 
 void construct_pyramid(int height);
 
@@ -16,9 +14,9 @@ int main(void)
 
         // get the user's input and append it to the height variable as a integer
 
-        scanf("%d", &height_of_pyramid);
+        scanf("%i", &height_of_pyramid);
     } 
-    while (height_of_pyramid <= 0 );
+    while (height_of_pyramid < 1);
 
     construct_pyramid(height_of_pyramid);
 }
@@ -26,16 +24,16 @@ int main(void)
 void construct_pyramid(int height)
 {
     // A loop to handle rows of the pyramid
-    for (int i = 0; i <= height; i++)
+    for (int i = 1; i <= height; i++)
     {
         // inner loop to handle spaces between each row of the pyramid
-        for (int j = 0; j <= height - i; j++)
+        for (int j = 1; j <= height - i; j++)
         {
             printf(" ");
         }
 
         // a loop to handle the printing of the hashtags for each row
-        for (int k = 0; k <= i; k++)
+        for (int k = 1; k <= i; k++)
         {
             printf("#");
         }
